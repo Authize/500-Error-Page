@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>500 Internal Server Error</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: radial-gradient(circle at center, #0a0a0a, #1a1a1a, #000);
+            overflow: hidden;
+            font-family: 'Arial', sans-serif;
+            color: #fff;
+        }
+
+        .error-container {
+            text-align: center;
+            position: relative;
+        }
+
+        .glitch {
+            font-size: 6rem;
+            font-weight: bold;
+            color: #fff;
+            position: relative;
+            animation: glitch 2s infinite;
+        }
+
+        .glitch::before,
+        .glitch::after {
+            content: "500";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            color: #ff0000;
+            z-index: -1;
+            clip-path: polygon(0 0, 100% 0, 100% 50%, 0 50%);
+            animation: glitchBefore 2s infinite;
+        }
+
+        .glitch::after {
+            color: #00ffea;
+            clip-path: polygon(0 50%, 100% 50%, 100% 100%, 0 100%);
+            animation: glitchAfter 2s infinite;
+        }
+
+        @keyframes glitch {
+            0% {
+                transform: translate(0, 0);
+            }
+            20% {
+                transform: translate(-5px, 5px);
+            }
+            40% {
+                transform: translate(5px, -5px);
+            }
+            60% {
+                transform: translate(-5px, -5px);
+            }
+            80% {
+                transform: translate(5px, 5px);
+            }
+            100% {
+                transform: translate(0, 0);
+            }
+        }
+
+        @keyframes glitchBefore {
+            0% {
+                transform: translate(-2px, -2px);
+            }
+            50% {
+                transform: translate(2px, 2px);
+            }
+            100% {
+                transform: translate(-2px, -2px);
+            }
+        }
+
+        @keyframes glitchAfter {
+            0% {
+                transform: translate(2px, 2px);
+            }
+            50% {
+                transform: translate(-2px, -2px);
+            }
+            100% {
+                transform: translate(2px, 2px);
+            }
+        }
+
+        .message {
+            margin-top: 20px;
+            font-size: 1.5rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .retry-button {
+            margin-top: 30px;
+            padding: 12px 25px;
+            font-size: 1.2rem;
+            color: #fff;
+            background: linear-gradient(45deg, #ff003c, #ff9900);
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+            text-transform: uppercase;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .retry-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 30px rgba(255, 0, 0, 0.8);
+        }
+
+        .background-glitch {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: repeating-linear-gradient(
+                90deg,
+                rgba(255, 255, 255, 0.05),
+                rgba(255, 255, 255, 0.05) 1px,
+                transparent 1px,
+                transparent 3px
+            );
+            animation: flicker 1.5s infinite;
+        }
+
+        @keyframes flicker {
+            0%,
+            100% {
+                opacity: 0.9;
+            }
+            50% {
+                opacity: 0.5;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="background-glitch"></div>
+    <div class="error-container">
+        <div class="glitch">500</div>
+        <p class="message">Something went wrong on our end. Please try again later.</p>
+        <button class="retry-button" onclick="location.reload();">Retry</button>
+    </div>
+</body>
+</html>
