@@ -27,7 +27,7 @@ This error page is designed to convey a sense of disruption while maintaining a 
 ---
 
 ## 🖼️ Demo
-**Live Demo:** [Click Here to See the Black Hole in Action](https://500-jet.vercel.app/)  
+**Live Demo:** [Click Here to See the Glitch in Working](https://500-jet.vercel.app/)  
 
 ---
 
