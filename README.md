@@ -26,10 +26,8 @@ This error page is designed to convey a sense of disruption while maintaining a 
 
 ---
 
-## Demo 🖥️  
-
-You can preview the live page by hosting the HTML on any local or online server.  
-The retry button automatically reloads the page when clicked.
+## 🖼️ Demo
+**Live Demo:** [Click Here to See the Black Hole in Action](https://500-jet.vercel.app/)  
 
 ---
 
